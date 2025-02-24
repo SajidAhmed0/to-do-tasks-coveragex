@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TaskServiceImpl implements TaskService {
@@ -23,9 +24,10 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Task markAsCompleted(Long id) {
-        Task task = taskRepository.findById(id).orElseThrow(() -> new RuntimeException("Task not found"));
-        task.setStatus(true);
-        return taskRepository.save(task);
+    public Optional<Task> markAsCompleted(Long id) {
+        return taskRepository.findById(id).map(task -> {
+            task.setStatus(true);
+            return taskRepository.save(task);
+        });
     }
 }
