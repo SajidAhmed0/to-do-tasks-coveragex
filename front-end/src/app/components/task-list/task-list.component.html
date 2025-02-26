@@ -1,9 +1,9 @@
 <div class="task-list-container">
     <div *ngIf="tasks().length < 1">
-        <h2 style="text-align: center;">No Tasks</h2>
+        <h2 style="text-align: center;">No Pending Tasks</h2>
     </div>
     <div *ngIf="tasks().length > 0">
-        <h2 style="text-align: center;">Latest 5 Tasks</h2>
+        <h2 style="text-align: center;">Latest Tasks</h2>
         <app-task-card *ngFor="let task of tasks()" [task]="task" (taskCompleted)="markAsDone($event)"></app-task-card>
     </div>
   </div>
