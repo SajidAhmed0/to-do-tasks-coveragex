@@ -1,0 +1,17 @@
+<form (submit)="addTask()" class="form-container">
+    <h2 style="text-align: center;">Create a Task</h2>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput [(ngModel)]="title" name="title" required />
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <textarea matInput [(ngModel)]="description" name="description" required></textarea>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit" [disabled]="!canSubmit()">Add Task</button>
+  </form>
+  
+  
