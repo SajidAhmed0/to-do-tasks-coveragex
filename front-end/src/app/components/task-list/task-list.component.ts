@@ -21,7 +21,15 @@ export class TaskListComponent implements OnInit {
   }
 
   loadTasks() {
-    this.taskService.getTasks().subscribe((data) => this.tasks.set(data));
+    this.taskService.getTasks().subscribe((data) => {
+      console.log(data)
+      if(data == null){
+        this.tasks.set([])
+      }else{
+        this.tasks.set(data)
+      }
+    }
+  );
   }
 
   markAsDone(id: number) {
