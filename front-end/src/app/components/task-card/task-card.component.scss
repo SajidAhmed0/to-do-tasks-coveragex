@@ -1,0 +1,20 @@
+.task-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    margin: 5px;
+  }
+  
+  .task-card:hover {
+    transform: scale(1.02);
+  }
+  
+  button {
+    align-self: flex-end;
+  }
+  
