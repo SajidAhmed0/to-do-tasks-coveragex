@@ -1,4 +1,4 @@
-import { Component, Signal, computed, signal } from '@angular/core';
+import { Component, Signal, computed, signal, Output, EventEmitter } from '@angular/core';
 import { TaskService } from '../../services/task.service';
 import { Task } from '../../models/task.model';
 import { FormsModule } from '@angular/forms';
@@ -20,6 +20,8 @@ export class TaskFormComponent {
   title = signal('');
   description = signal('');
 
+  @Output() taskAdded = new EventEmitter<void>();
+
   canSubmit: Signal<boolean> = computed(() => this.title().trim() !== '' && this.description().trim() !== '');
 
   addTask() {
@@ -28,7 +30,7 @@ export class TaskFormComponent {
       this.taskService.createTask(newTask).subscribe(() => {
         this.title.set('');
         this.description.set('');
-        window.location.reload();
+        this.taskAdded.emit();
       });
     }
   }
