@@ -36,4 +36,8 @@ public class Task {
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
     }
+
+    public boolean getStatus(){
+        return this.status;
+    }
 }
