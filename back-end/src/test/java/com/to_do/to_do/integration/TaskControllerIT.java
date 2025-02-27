@@ -1,5 +1,6 @@
-package com.to_do.to_do;
+package com.to_do.to_do.integration;
 
+import com.to_do.to_do.ToDoApplication;
 import com.to_do.to_do.entity.Task;
 import com.to_do.to_do.repository.TaskRepository;
 import org.junit.jupiter.api.Test;
@@ -14,7 +15,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = ToDoApplication.class)
 @SpringBootTest(classes = ToDoApplication.class)
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
