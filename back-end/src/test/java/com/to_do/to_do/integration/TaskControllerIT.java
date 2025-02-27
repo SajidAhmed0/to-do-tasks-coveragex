@@ -85,4 +85,12 @@ public class TaskControllerIT {
         mockMvc.perform(put("/api/tasks/" + task.getId() + "/complete"))
                 .andExpect(status().isOk());
     }
+
+    @Test
+    void testMarkAsCompletedNotFound() throws Exception {
+        Task task = taskRepository.save(new Task(null, "Task", "Description", false, null));
+
+        mockMvc.perform(put("/api/tasks/" + task.getId() + 1 + "/complete"))
+                .andExpect(status().isNotFound());
+    }
 }
