@@ -1,0 +1,39 @@
+
+services:
+  mysql:
+    container_name: to-do-tasks-coveragex_mysql_1
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: todo_db
+    ports:
+      - "3306:3306"
+    networks:
+      - todo-network
+
+  backend:
+    container_name: to-do-tasks-coveragex_backend_1
+    build: ./back-end
+    restart: always
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
+    networks:
+      - todo-network
+
+  frontend:
+    container_name: to-do-tasks-coveragex_frontend_1
+    build: ./front-end
+    depends_on:
+      - backend
+    ports:
+      - "4200:80"
+    networks:
+      - todo-network
+
+networks:
+  todo-network:
+    name: todo-network
+    driver: bridge
