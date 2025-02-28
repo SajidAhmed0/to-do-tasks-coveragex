@@ -28,3 +28,9 @@ http://localhost:4200/
 # Test for frontend
 
 - ng test - will execute all the unit test cases
+
+# Sample UI
+
+<img src="./images/img1.png">
+
+<img src="./images/img2.png">
