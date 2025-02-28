@@ -67,32 +67,4 @@ describe('TaskFormComponent', () => {
     expect(button.disabled).toBeFalsy();
   });
 
-  // it('should call `createTask` on form submit', () => {
-  //   component.title.set('New Task');
-  //   component.description.set('Task Description');
-  //   fixture.detectChanges();
-
-  //   const newTask: Task = { title: 'New Task', description: 'Task Description' };
-
-  //   taskService.createTask.and.returnValue(of(newTask));
-
-    
-  //   component.addTask();
-
-  //   expect(taskService.createTask).toHaveBeenCalledWith(newTask);
-  // });
-
-  // it('should emit `taskAdded` event when a task is successfully created', () => {
-  //   spyOn(component.taskAdded, 'emit');
-
-  //   component.title.set('New Task');
-  //   component.description.set('Task Description');
-  //   fixture.detectChanges();
-
-  //   taskService.createTask.and.returnValue(of({ title: 'New Task', description: 'Task Description' }));
-
-  //   component.addTask();
-
-  //   expect(component.taskAdded.emit).toHaveBeenCalled();
-  // });
 });

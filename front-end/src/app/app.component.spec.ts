@@ -25,7 +25,6 @@ class MockTaskListComponent {
 describe('AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
-  // let mockTaskList: jasmine.SpyObj<MockTaskListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -44,11 +43,6 @@ describe('AppComponent', () => {
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
 
-    
-    // mockTaskList = jasmine.createSpyObj<TaskListComponent>('TaskListComponent', ['loadTasks']);
-        
-    // component.taskList = mockTaskList;
-
     fixture.detectChanges();
   });
 
@@ -61,8 +55,4 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('h1')?.textContent).toContain('To-Do Tasks ✅');
   });
 
-  // it('should call `reloadTaskList` when a task is added', () => {
-  //   component.reloadTaskList();
-  //   expect(mockTaskList.loadTasks).toHaveBeenCalled();
-  // });
 });

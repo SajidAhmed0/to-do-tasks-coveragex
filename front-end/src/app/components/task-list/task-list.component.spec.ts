@@ -54,19 +54,4 @@ describe('TaskListComponent', () => {
     expect(compiled.querySelectorAll('app-task-card').length).toBe(2);
   });
 
-  // it('should call `markAsCompleted` when `markAsDone` is triggered', () => {
-  //   const taskId = 1;
-  //   taskService.markAsCompleted.and.returnValue(of({ id: 1, title: 'Task 1', description: 'Description 1', status: true }));
-
-  //   component.markAsDone(taskId);
-  //   expect(taskService.markAsCompleted).toHaveBeenCalledWith(taskId);
-  // });
-
-  // it('should call `loadTasks` after marking a task as done', () => {
-  //   spyOn(component, 'loadTasks');
-  //   taskService.markAsCompleted.and.returnValue(of({ id: 1, title: 'Task 1', description: 'Description 1', status: true }));
-
-  //   component.markAsDone(1);
-  //   expect(component.loadTasks).toHaveBeenCalled();
-  // });
 });
