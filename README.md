@@ -23,7 +23,7 @@ http://localhost:4200/
 - mvn clean - clean the target folder
 - mvn test - test all the unit tests
 - mvn verify - test all the integration test
-  after mvn verify you can see test coverage report in target/site/jacoco/index.html
+ * after `mvn verify` you can see test coverage report in target/site/jacoco/index.html
 
 # Test for frontend
 
